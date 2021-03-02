@@ -37,21 +37,21 @@
 
 #killdiv {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	float: left;
 }
 
 #deathdiv {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	float: left;
 }
 
 #kddiv {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	float: left;
 }
@@ -68,61 +68,61 @@
 /* Placement */
 
 .killItems {
-	left: 16.6%;
-	bottom: 9.3%;
+	left: 16.7%;
+	bottom: 6.2%;
 }
 
 .deathItems {
-	left: 17%;
-	bottom: 3%;
+	left: 16.7%;
+	bottom: 3.9%;
 }
 
 .kdItems {
-	left: 17.15%;
-	bottom: 1.3%;
+	left: 16.7%;
+	bottom: 1.5%;
 }
 
 
 /* Individual Properties */
 
 #kills1 {
-	color: rgba(241, 235, 235, 1.0);
+	color: rgba(255, 255, 255, 1.0);
 	font-size: 1.0vw;
-	margin: 0 12px;
+	margin: 0 0;
 	line-height: 140%;
 }
 
-#kill2 {
-	color: rgba(212, 212, 212, 0.7);
-	font-size: 3.0vw;
-	position: relative;
-	bottom: 6px;
+#kills2 {
+	color: rgba(255, 255, 255, 1.0);
+	font-size: 1.0vw;
+	margin: 0 7px;
+	line-height: 140%;
 }
 
 #deaths1 {
-	color: rgba(241, 235, 235, 1.0);
-	font-size: 2.4vw;
-	margin: 0 7px;
-	line-height: 120%;
-}
-
-#deaths2 {
-	color: rgba(240, 200, 80, 1.0);
-	font-size: 1.4vw;
-	margin: 0 12px;
+	color: rgba(255, 255, 255, 1.0);
+	font-size: 1.0vw;
+	margin: 0 0;
 	line-height: 140%;
 }
 
-#kd11 {
-	color: rgba(240, 200, 80, 1.0);
+#deaths2 {
+	color: rgba(255, 255, 255, 1.0);
+	font-size: 1.0vw;
+	margin: 0 7px;
+	line-height: 140%;
+}
+
+#kd1 {
+	color: rgba(255, 255, 255, 1.0);
 	font-size: 1.0vw;
 	margin: 0 0;
 	line-height: 140%;
 }
 
 #kd2 {
-	color: rgba(241, 235, 235, 1.0);
-	font-size: 0.96vw;
-	margin: 0 0;
+	color: rgba(255, 255, 255, 1.0);
+	font-size: 1.0vw;
+	margin: 0 7px;
 	line-height: 140%;
 }

@@ -19,6 +19,7 @@
 
 local KILLS = 0
 local DEATHS = 0
+local KD = 0
 
 local kdShow = true
 
@@ -26,14 +27,6 @@ local kdShow = true
 -- COMMANDS
 
 RegisterCommand('kd', function()
-	local kd = 0
-	if DEATHS ~= 0 then
-		kd = KILLS / DEATHS
-	else
-		kd = KILLS
-	end
-	kd = round(kd, 2)
-
 	TriggerEvent('chat:addMessage', {
 		color = { 255, 0, 0},
 		multiline = true,
@@ -49,7 +42,7 @@ RegisterCommand('kd', function()
 	TriggerEvent('chat:addMessage', {
 		color = { 255, 0, 0},
 		multiline = true,
-		args = {"[KD]", kd}
+		args = {"[KD]", KD}
 	})
 end)
 
@@ -68,12 +61,22 @@ Citizen.CreateThread(function()
 
 	while true do
 		Citizen.Wait(500)
-		
-		-- TEMPORARY
-		SendNUIMessage({
-			type = 'KD:DISPLAY',
-			active = false
-		});
+
+		if kdShow == true then
+			SendNUIMessage({
+				type = 'KD:DISPLAY',
+				active = true,
+				kills = KILLS,
+				deaths = DEATHS,
+				kd = KD
+			});
+		else
+			SendNUIMessage({
+				type = 'KD:DISPLAY',
+				active = false
+			});
+		end
+
 	end
 end)
 
@@ -102,6 +105,16 @@ Citizen.CreateThread(function()
 			end
 
 			DEATHS = DEATHS + 1
+
+			if DEATHS == 0 then
+				KD = KILLS
+			elseif KILLS == 0 then
+				KD = DEATHS * -1
+			else
+				KD = KILLS / DEATHS
+			end
+			KD = round(KD, 2)
+
 		elseif not IsEntityDead(PlayerPedId()) and wasDead == true then
 			wasDead = false
 		end
@@ -114,6 +127,15 @@ end)
 RegisterNetEvent(GetCurrentResourceName()..'CLKillerLog')
 AddEventHandler(GetCurrentResourceName()..'CLKillerLog', function()
 	KILLS = KILLS + 1
+
+	if DEATHS == 0 then
+		KD = KILLS
+	elseif KILLS == 0 then
+		KD = DEATHS
+	else
+		KD = KILLS / DEATHS
+	end
+	KD = round(KD, 2)
 end)
 
 
