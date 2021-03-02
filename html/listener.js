@@ -41,4 +41,23 @@ function onMessageRecieved(event){
 			$('#kd2').text(kd2);
 		}
 	}
+
+	if (item && item.type === 'KD:DATA') {
+		/* Color Customization */
+		let kills = [item.kills.colorR, item.kills.colorG, item.kills.colorB, item.kills.opacity]
+		let deaths = [item.deaths.colorR, item.deaths.colorG, item.deaths.colorB, item.deaths.opacity]
+		let kd = [item.kd.colorR, item.kd.colorG, item.kd.colorB, item.kd.opacity]
+
+		$('#kills1').css('color', 'rgba('+kills.join(', ')+')');
+		$('#kills2').css('color', 'rgba('+kills.join(', ')+')');
+
+		$('#deaths1').css('color', 'rgba('+deaths.join(', ')+')');
+		$('#deaths2').css('color', 'rgba('+deaths.join(', ')+')');
+
+		$('#kd1').css('color', 'rgba('+kd.join(', ')+')');
+		$('#kd2').css('color', 'rgba('+kd.join(', ')+')');
+
+		/* TODO: Positioning */
+		
+	}
 }

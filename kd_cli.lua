@@ -59,6 +59,17 @@ Citizen.CreateThread(function()
 
 	TriggerEvent('chat:addSuggestion', '/kdtoggle', 'Toggles your K/D display on / off')
 
+	-- Wait a single second before sending data NUI message
+	Citizen.Wait(1000);
+
+	SendNUIMessage({
+		type = 'KD:DATA',
+		position = config.position,
+		kills = config.kills,
+		deaths = config.deaths,
+		kd = config.kd
+	});
+
 	while true do
 		Citizen.Wait(500)
 
