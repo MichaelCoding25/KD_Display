@@ -132,6 +132,14 @@ Citizen.CreateThread(function()
 	end
 end)
 
+-- Garbage Collection Thread
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(30000)
+		collectgarbage()
+	end
+end)
+
 
 -- EVENTS
 
