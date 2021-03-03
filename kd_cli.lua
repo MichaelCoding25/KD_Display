@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
 	});
 
 	while true do
-		Citizen.Wait(500)
+		Citizen.Wait(1000)
 
 		if kdShow == true then
 			SendNUIMessage({

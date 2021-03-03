@@ -26,37 +26,31 @@
 --]]
 
 config = {
-	position = {
+	position = { -- The position of the text on the screen
 		-- 0:100
-		offset_left= 16.7; -- The position (in percentile) from the left side of the screen. (Default: 16.7)
-		offset_bottom = 1.5; -- The position (in percentile) from the bottom side of the screen of the lowest element. (Default: 1.5)
-		space = 2.4; -- The vertical space in between all the elements. (Default: 2.4)
+		offset_left = 16.7; -- The offset (in percentile) from the left side of the screen. // (Default: 16.7)
+		offset_bottom = 1.5; -- The offset (in percentile) from the bottom side of the screen of the lowest element. // (Default: 1.5)
+		space = 2.4; -- The vertical space in between all the elements. // (Default: 2.4)
 	};
 
-	kills = { -- The Kills Display
-		-- 0:255
-		colorR = 0; -- The red value of kills out of the RGB. (Default: 255)
-		colorG = 0; -- The greem value of kills out of the RGB. (Default: 255)
-		colorB = 0; -- The blue value of kills out of the RGB. (Default: 255)
-		-- 0.0:1.0
-		opacity = 1.0; -- The transparancy of the text. (Default: 1.0)
+	kills = { -- The Kills Text
+		colorR = 255; -- Defines the intensity of red as an integer between 0 and 255. // (Default: 255)
+		colorG = 255; -- Defines the intensity of green as an integer between 0 and 255. // (Default: 255)
+		colorB = 255; -- Defines the intensity of blue as an integer between 0 and 255. // (Default: 255)
+		alpha = 1.0; -- Defines the opacity as a number between 0.0 (fully transparent) and 1.0 (fully opaque). // (Default: 1.0)
 	};
 
-	deaths = { -- The Kills Display
-		-- 0:255
-		colorR = 0. -- The red value of kills out of the RGB. (Default: 255)
-		colorG = 0. -- The greem value of kills out of the RGB. (Default: 255)
-		colorB = 0; -- The blue value of kills out of the RGB. (Default: 255)
-		-- 0.0:1.0
-		opacity = 1.0; -- The transparancy of the text. (Default: 1.0)
+	deaths = { -- The Deaths Text
+		colorR = 255; -- Defines the intensity of red as an integer between 0 and 255. // (Default: 255)
+		colorG = 255; -- Defines the intensity of green as an integer between 0 and 255. // (Default: 255)
+		colorB = 255; -- Defines the intensity of blue as an integer between 0 and 255. // (Default: 255)
+		alpha = 1.0; -- Defines the opacity as a number between 0.0 (fully transparent) and 1.0 (fully opaque). // (Default: 1.0)
 	};
 
-	kd = { -- The KD Display
-		-- 0:255
-		colorR = 0; -- The red value of kd out of the RGB. (Default: 255)
-		colorG = 0; -- The greem value of kills out of the RGB). (Default: 255) 
-		colorB = 0; -- The blue value of kills out of the RGB. (Default: 255)
-		-- 0.0:1.0
-		opacity = 1.0; -- The transparancy of the text. (Default: 1.0)
+	kd = { -- The KD Text
+		colorR = 255; -- Defines the intensity of red as an integer between 0 and 255. // (Default: 255)
+		colorG = 255; -- Defines the intensity of green as an integer between 0 and 255. // (Default: 255)
+		colorB = 255; -- Defines the intensity of blue as an integer between 0 and 255. // (Default: 255)
+		alpha = 1.0; -- Defines the opacity as a number between 0.0 (fully transparent) and 1.0 (fully opaque). // (Default: 1.0)
 	}
 }

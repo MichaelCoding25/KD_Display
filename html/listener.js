@@ -54,9 +54,9 @@ function onMessageRecieved(event){
 
 	if (item && item.type === 'KD:DATA') {
 		/* Color Customization */
-		let kills = [item.kills.colorR, item.kills.colorG, item.kills.colorB, item.kills.opacity]
-		let deaths = [item.deaths.colorR, item.deaths.colorG, item.deaths.colorB, item.deaths.opacity]
-		let kd = [item.kd.colorR, item.kd.colorG, item.kd.colorB, item.kd.opacity]
+		let kills = [item.kills.colorR, item.kills.colorG, item.kills.colorB, item.kills.alpha];
+		let deaths = [item.deaths.colorR, item.deaths.colorG, item.deaths.colorB, item.deaths.alpha];
+		let kd = [item.kd.colorR, item.kd.colorG, item.kd.colorB, item.kd.alpha];
 
 		$('#kills1').css('color', 'rgba('+kills.join(', ')+')');
 		$('#kills2').css('color', 'rgba('+kills.join(', ')+')');
@@ -67,7 +67,14 @@ function onMessageRecieved(event){
 		$('#kd1').css('color', 'rgba('+kd.join(', ')+')');
 		$('#kd2').css('color', 'rgba('+kd.join(', ')+')');
 
-		/* TODO: Positioning */
-		
+		/* Positioning */
+		$('.kdItems').css('left', item.position.offset_left + '%');
+		$('.kdItems').css('bottom', item.position.offset_bottom + '%');
+
+		$('.deathItems').css('left', item.position.offset_left + '%');
+		$('.deathItems').css('bottom', item.position.offset_bottom  + item.position.space + '%');
+
+		$('.killItems').css('left', item.position.offset_left + '%');
+		$('.killItems').css('bottom', item.position.offset_bottom + (2 * item.position.space) + '%');
 	}
 }

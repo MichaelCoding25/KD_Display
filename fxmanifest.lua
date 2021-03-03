@@ -34,7 +34,8 @@ version 'v0.0.1'
 url 'https://github.com/MichaelCoding25/KD_Display'
 
 client_scripts {
-	'kd_cli.lua'
+	'kd_cli.lua',
+	'config.lua'
 }
 
 server_scripts {
