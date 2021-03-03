@@ -21,7 +21,7 @@ games { 'gta5' }
 author 'MichaelCoding25'
 description 'Displays player kill death ratio on screen'
 version 'v0.0.1'
-url 'https://github.com/MichaelCoding25'
+url 'https://github.com/MichaelCoding25/KD_Display'
 
 client_scripts {
 	'kd_cli.lua'
