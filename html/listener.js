@@ -26,13 +26,13 @@
 */
 
 window.onload = (e) => {
-	window.addEventListener('message', onMessageRecieved);
+	window.addEventListener("message", onMessageRecieved);
 };
 
 function onMessageRecieved(event){
 	let item = event.data;
 
-	if (item && item.type === 'KD:DISPLAY') {
+	if (item && item.type === "KD:DISPLAY") {
 		if (!item.active) {
 			$("#killscontainer").hide();
 			$("#deathscontainer").hide();
@@ -46,35 +46,35 @@ function onMessageRecieved(event){
 			let deaths2 = item.deaths;
 			let kd2 = item.kd;
 
-			$('#kills2').text(kills2);
-			$('#deaths2').text(deaths2);
-			$('#kd2').text(kd2);
+			$("#kills2").text(kills2);
+			$("#deaths2").text(deaths2);
+			$("#kd2").text(kd2);
 		}
 	}
 
-	if (item && item.type === 'KD:DATA') {
+	if (item && item.type === "KD:DATA") {
 		/* Color Customization */
 		let kills = [item.kills.colorR, item.kills.colorG, item.kills.colorB, item.kills.alpha];
 		let deaths = [item.deaths.colorR, item.deaths.colorG, item.deaths.colorB, item.deaths.alpha];
 		let kd = [item.kd.colorR, item.kd.colorG, item.kd.colorB, item.kd.alpha];
 
-		$('#kills1').css('color', 'rgba('+kills.join(', ')+')');
-		$('#kills2').css('color', 'rgba('+kills.join(', ')+')');
+		$("#kills1").css("color", "rgba("+kills.join(", ")+")");
+		$("#kills2").css("color", "rgba("+kills.join(", ")+")");
 
-		$('#deaths1').css('color', 'rgba('+deaths.join(', ')+')');
-		$('#deaths2').css('color', 'rgba('+deaths.join(', ')+')');
+		$("#deaths1").css("color", "rgba("+deaths.join(", ")+")");
+		$("#deaths2").css("color", "rgba("+deaths.join(", ")+")");
 
-		$('#kd1').css('color', 'rgba('+kd.join(', ')+')');
-		$('#kd2').css('color', 'rgba('+kd.join(', ')+')');
+		$("#kd1").css("color", "rgba("+kd.join(", ")+")");
+		$("#kd2").css("color", "rgba("+kd.join(", ")+")");
 
 		/* Positioning */
-		$('.kdItems').css('left', item.position.offset_left + '%');
-		$('.kdItems').css('bottom', item.position.offset_bottom + '%');
+		$(".kdItems").css("left", item.position.offset_left + "%");
+		$(".kdItems").css("bottom", item.position.offset_bottom + "%");
 
-		$('.deathItems').css('left', item.position.offset_left + '%');
-		$('.deathItems').css('bottom', item.position.offset_bottom  + item.position.space + '%');
+		$(".deathItems").css("left", item.position.offset_left + "%");
+		$(".deathItems").css("bottom", item.position.offset_bottom  + item.position.space + "%");
 
-		$('.killItems').css('left', item.position.offset_left + '%');
-		$('.killItems').css('bottom', item.position.offset_bottom + (2 * item.position.space) + '%');
+		$(".killItems").css("left", item.position.offset_left + "%");
+		$(".killItems").css("bottom", item.position.offset_bottom + (2 * item.position.space) + "%");
 	}
 }
